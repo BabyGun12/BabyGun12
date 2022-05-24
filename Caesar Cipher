@@ -1,0 +1,36 @@
+char cipher(char src[], int k);
+int main() {
+	int k, i;
+	char src[200];
+	printf("Please enter a word to encrypt:\n");
+	scanf("%s", src);
+	printf("Now please enter a 'key' to encrypt the word by:\n");
+	scanf("%d", &k);
+	cipher(src, k);
+	return 0;
+}
+	char cipher(char src[], int k) 
+	{
+		int i, res;
+		for (i = 0; src[i]; i++)
+		{
+			res = src[i] + k;
+			if (res > 90)
+			{
+				res -= 90;
+				res += 64;
+				printf("%c", res);
+			}
+			else if (res > 122)
+			{
+				res -= 122;
+				res += 96;
+				printf("%c", res);
+			}
+			else
+			{
+				printf("%c", res);
+			}
+		}
+			return "You've made it!";
+	}
